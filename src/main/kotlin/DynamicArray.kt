@@ -2,6 +2,12 @@ class DynamicArray {
     private var length: Int = 0;
     private var array: IntArray = IntArray(5);
     private var capacity: Int = 5;
+    fun get(n: Int): Int {
+        if (n < 0 || n >= length) {
+            throw IndexOutOfBoundsException("Index $n out of $length");
+        }
+        return array[n]
+    }
     private fun guaranteeCapacity() {
         if (length < array.size) {
             return;
@@ -33,6 +39,11 @@ class DynamicArray {
         if (position < 0 || position >= length) {
             throw IndexOutOfBoundsException("Index $position out of $length");
         }
+        for (i in position..<(length - 1)) {
+            array[i] = array[i + 1];
+        }
+        array[length - 1] = 0;
+        length--;
     }
     fun size(): Int {
         return length;

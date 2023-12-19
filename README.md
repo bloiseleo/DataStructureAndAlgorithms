@@ -4,3 +4,4 @@ All the theory was learned from [this](https://www.youtube.com/watch?v=RBSGKlAvo
 
 ## Data Structure Implemented
 - Dynamic Array: An structure which can grow when trying to append more elements than the original can contain. Every time it happens, the array doubles in size.
+- Double Linked List: An structure which does not depend on contiguous memory space and is entirely based on Pointers.
